@@ -1,4 +1,4 @@
-## Automated ELK Stack Deployment
+# Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
 
@@ -7,7 +7,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the **playbook (.yml)** file may be used to install only certain pieces of it, such as Filebeat.
 
-  - (/Ansible/install-elk.yml)
+  - [ELK Playbook](/Ansible/install-elk.yml)
     
 This document contains the following details:
 - Description of the Topology
@@ -17,45 +17,59 @@ This document contains the following details:
   - Machines Being Monitored
 - How to Use the Ansible Build
 
-
 ### Description of the Topology
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+Load balancing ensures that the application will be highly protected, in addition to restricting inbound traffic to the network.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+- What aspect of security do load balancers protect? 
+	Load Balancing automatically distributes the incoming traffic across the network. Load balancer operates at layer four of the OSI Model. Azure provides a suite of fully managed load-balancing solutions. Load balancer supports both inbound and outbound network traffic. Azure load balancer uses health prove to monitor load-balanced resources. It also prevents downtime as it gives redundancies to the system.
+
+- What is the advantage of a jump box?
+	A jump-box a SSH gateway to a remote network, through which a connection can be made to another host in a different security zone. Jump-box host should be secured and regularly being monitored. Jump box prevents all Azure VM’s to expose to the public. It also helps to open only one port instead of several ports to connect different virtual machines present in the Azure cloud.
+
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system metric.
+- What does Filebeat watch for?
+	Filebeat is an open-source system. It monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing. It helps keep things simple by forwarding and centralizing logs and files, making the use of SSH unnecessary when you have several servers, virtual machines, and containers that generate logs.
+
+-What does Metricbeat record?
+	Metricbeat collects metrics from the operating system, application and services running on the server. It helps to monitor the servers by collecting metrics from the system and services running on the server. 
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Name     | Function   | IP Address | Operating System |
+|----------|------------|------------|------------------|
+| Jump-Box | Gateway    | 10.0.0.4   | Linux            |
+| Web-1    | Server     | 10.0.0.5   | Linux            |
+| Web-2    | Server     | 10.0.0.6   | Linux            |
+| Web-3    | Server     | 10.0.0.7   | Linux            |
+| ELK      | Monitoring | 10.1.0.4   | Linux            |
+
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the Jump-box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- Public IP: 13.64.187.206
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by jump-box.
+- Which machine did you allow to access your ELK VM? 
+	jump-box
+	
+- What was its IP address?
+	10.0.0.4
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Jump Box | Yes                 | 13.64.187.206        |
+| Web-1    | No                  | 10.0.0.4             |
+| Web-2    | No                  | 10.0.0.4             |
+| Web-3    | No                  | 10.0.0.4             |
+| ELK      | No                  | 10.0.0.4             |
 
 ### Elk Configuration
 
