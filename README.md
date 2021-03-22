@@ -29,7 +29,7 @@ Load balancing ensures that the application will be highly protected, in additio
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system metric.
 
-- what does filebeat watch for?
+- <p style= "What does filebeat watch for?;">
 	
 	Filebeat is an open-source system. It monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing. It helps keep things simple by forwarding and centralizing logs and files, making the use of SSH unnecessary when you have several servers, virtual machines, and containers that generate logs.
 
