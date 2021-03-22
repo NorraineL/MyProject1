@@ -74,19 +74,19 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because using ansible makes the installation, update and adding servers much quickier. 
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because using ansible makes the installation, update and adding servers much quicker. 
 
 - What is the main advantage of automating configuration with Ansible?
 
-The main aim of ansible is to provide large productivity gains to a wide variety of automation challenges. This tool is very easy and simple to use and yet powerful enough to automate complex multi-tier IT application environments. Here are some of the advantages of using Ansible:
+The main aim of ansible is to provide large productivity gains to a wide variety of automation challenges. This tool is extremely easy and simple to use and yet powerful enough to automate complex multi-tier IT application environments. Here are some of the advantages of using Ansible:
 
-- Ansible is an open source tool
-- Shell script are simple and no need of any other software installated
-- It only need to run script one time and everything will be setup
-- Ansible does not requires angents 
-- Ansible has powerful features that can manage the network, operating systems and services. Ansible provides hundreds of modules to manage them
+- Ansible is an open-source tool
+- Shell scripts are simple and no need of any other software installed
+- It only needs to run script one time and everything will be setup
+- Ansible does not requires agents 
+- Ansible has powerful features that can manage the network, operating systems and services. 
 - No extra software on the server. 
-- Ansible can be customized as they IT needs
+- Ansible can be customized as what IT needs
 
 The playbook implements the following tasks:
 - Install docker.io
@@ -109,7 +109,7 @@ This ELK server is configured to monitor the following machines:
 | Web-2    | 10.0.0.6   | Linux |
 | Web-3    | 10.0.0.7   | Linux |
 
-_We have installed the following Beats on these machines:_
+We have installed the following Beats on these machines:
 - filebeat
 - metricbeat
 
@@ -124,13 +124,44 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Copy the plyabook (.yml) files to ansible folter (/etc/ansible).
+- Update the hosts file to include: webservsers and elk host
+- Run the playbook, and navigate to Kibana to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+**Answer the following questions to fill in the blanks:**
+- Which file is the playbook? 
+	- ELK
+	
+- Where do you copy it?
+	- /etc/ansible
+	
+- Which file do you update to make Ansible run the playbook on a specific machine? 
+	- hosts
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+- How do I specify which machine to install the ELK server on versus which to install Filebeat on?
+
+nano /etc/ansible/hosts ... add the following servers: 
+...
+[webservers]
+10.0.0.5 ansible_python_interpreter=/usr/bin/python3
+10.0.0.6 ansible_python_interpreter=/usr/bin/python3
+10.0.0.7 ansible_python_interpreter=/usr/bin/python3
+
+[elk]
+10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+...
+
+- Which URL do you navigate to in order to check that the ELK server is running?
+	(http://168.62.53.233:5601/app/kibana#/home)
+
+- As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
+
+- Update the following files /etc/ansible: 
+	- hosts: adding the websers and ell
+	- ansible.cfg: remote_user = azadmin
+- 
+
+- run playbook
+	- ansible-playbook elk.yml
+	
+
