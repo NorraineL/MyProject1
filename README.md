@@ -64,13 +64,13 @@ Machines within the network can only be accessed by jump-box.
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes                 | 13.64.187.206        |
-| Web-1    | No                  | 10.0.0.4             |
-| Web-2    | No                  | 10.0.0.4             |
-| Web-3    | No                  | 10.0.0.4             |
-| ELK      | No                  | 10.0.0.4             |
+| Name     | Publicly Accessible | Allowed IP Addresses        |
+|----------|---------------------|-----------------------------|
+| Jump Box | Yes                 | 10.0.0.4 / 13.64.187.206    |
+| Web-1    | No                  | 10.0.0.5                    |
+| Web-2    | No                  | 10.0.0.6                    |
+| Web-3    | No                  | 10.0.0.7                    |
+| ELK      | Yes                 | 10.1.0.4/168.62.53.233:5601 |
 
 ### Elk Configuration
 
@@ -103,11 +103,11 @@ The following screenshot displays the result of running `docker ps` after succes
 
 This ELK server is configured to monitor the following machines:
 
-| Name     | IP Address | OS    |
-|----------|------------|-------|
-| Web-1    | 10.0.0.5   | Linux |
-| Web-2    | 10.0.0.6   | Linux |
-| Web-3    | 10.0.0.7   | Linux |
+| Name     | IP Address |
+|----------|------------|
+| Web-1    | 10.0.0.5   |
+| Web-2    | 10.0.0.6   |
+| Web-3    | 10.0.0.7   |
 
 We have installed the following Beats on these machines:
 - filebeat
@@ -124,7 +124,7 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the plyabook (.yml) files to ansible folter (/etc/ansible).
+- Copy the playbook (.yml) file to ansible folder (/etc/ansible).
 - Update the hosts file to include: webservsers and elk host
 - Run the playbook, and navigate to Kibana to check that the installation worked as expected.
 
@@ -157,11 +157,12 @@ nano /etc/ansible/hosts ... add the following servers:
 - As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
 
 - Update the following files /etc/ansible: 
-	- hosts: adding the websers and ell
+	- hosts: adding the websers and elk
 	- ansible.cfg: remote_user = azadmin
-- 
-
+- Need to increase memory count
+	- value: 262144
+- download/run
+	- sebp/elk:761
 - run playbook
 	- ansible-playbook elk.yml
 	
-
