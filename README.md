@@ -23,17 +23,18 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly protected, in addition to restricting inbound traffic to the network.
 
-- What aspect of security do load balancers protect? 
-	Load Balancing automatically distributes the incoming traffic across the network. Load balancer operates at layer four of the OSI Model. Azure provides a suite of fully managed load-balancing solutions. Load balancer supports both inbound and outbound network traffic. Azure load balancer uses health prove to monitor load-balanced resources. It also prevents downtime as it gives redundancies to the system.
+- "What aspect of security do load balancers protect"? Load Balancing automatically distributes the incoming traffic across the network. Load balancer operates at layer four of the OSI Model. Azure provides a suite of fully managed load-balancing solutions. Load balancer supports both inbound and outbound network traffic. Azure load balancer uses health prove to monitor load-balanced resources. It also prevents downtime as it gives redundancies to the system.
 
-- What is the advantage of a jump box?
-	A jump-box a SSH gateway to a remote network, through which a connection can be made to another host in a different security zone. Jump-box host should be secured and regularly being monitored. Jump box prevents all Azure VM’s to expose to the public. It also helps to open only one port instead of several ports to connect different virtual machines present in the Azure cloud.
+- What is the advantage of a jump box? A jump-box a SSH gateway to a remote network, through which a connection can be made to another host in a different security zone. Jump-box host should be secured and regularly being monitored. Jump box prevents all Azure VM’s to expose to the public. It also helps to open only one port instead of several ports to connect different virtual machines present in the Azure cloud.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system metric.
-- What does Filebeat watch for?
+
+- what does filebeat watch for?
+	
 	Filebeat is an open-source system. It monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing. It helps keep things simple by forwarding and centralizing logs and files, making the use of SSH unnecessary when you have several servers, virtual machines, and containers that generate logs.
 
--What does Metricbeat record?
+- What does Metricbeat record?
+	
 	Metricbeat collects metrics from the operating system, application and services running on the server. It helps to monitor the servers by collecting metrics from the system and services running on the server. 
 
 The configuration details of each machine may be found below.
