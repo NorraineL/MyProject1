@@ -53,14 +53,15 @@ The configuration details of each machine may be found below.
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the Jump-box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- Public IP: 13.64.187.206
+	- 104.42.153.206
+	- 168.62.53.233:5601 
 
 Machines within the network can only be accessed by jump-box.
 - Which machine did you allow to access your ELK VM? 
-	jump-box
+	- jump-box
 	
 - What was its IP address?
-	10.0.0.4
+	- 10.0.0.4 / 13.64.187.206
 
 A summary of the access policies in place can be found in the table below.
 
@@ -152,7 +153,7 @@ nano /etc/ansible/hosts ... add the following servers:
 ...
 
 - Which URL do you navigate to in order to check that the ELK server is running?
-	(http://168.62.53.233:5601/app/kibana#/home)
+	http://168.62.53.233:5601/app/kibana#/home
 
 - As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
 
