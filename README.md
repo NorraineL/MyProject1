@@ -92,11 +92,11 @@ What is the main advantage of automating configuration with Ansible?
 
 The playbook implements the following tasks:
 - In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.
-		- Install docker.io
-		- Install python3-pip
-		- Install docker python module
-		- Increase virtual memory
-		- Download and launch a docker container
+	- Install docker.io
+	- Install python3-pip
+	- Install docker python module
+	- Increase virtual memory
+	- Download and launch a docker container
 
 ### The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -141,6 +141,7 @@ SSH into the control node and follow the steps below:
 	
 - Which file do you update to make Ansible run the playbook on a specific machine? 
 	- **hosts**
+	
 	[webservers] 
 	10.0.0.5 ansible_python_interpreter=/usr/bin/python3 
 	10.0.0.6 ansible_python_interpreter=/usr/bin/python3 
