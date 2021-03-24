@@ -55,8 +55,9 @@ The machines on the internal network are not exposed to the public Internet.
 Only the **Jump-box** machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 
 Add whitelisted IP addresses
-	- WebServers Public IP: 104.42.153.206:80
-	- ELK Server Public IP: 168.62.53.233:5601
+
+- WebServers Public IP: 104.42.153.206:80
+- ELK Server Public IP: 168.62.53.233:5601
 
 Machines within the network can only be accessed by 'SSH'.
 - Which machine did you allow to access your ELK VM?
@@ -79,17 +80,18 @@ A summary of the access policies in place can be found in the table below.
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because using ansible makes the installation, update and adding servers much quicker. 
 
 What is the main advantage of automating configuration with Ansible?
-	- The main aim of ansible is to provide large productivity gains to a wide variety of automation challenges. This tool is extremely easy and simple to use and yet powerful enough to automate complex multi-tier IT application environments. Here are some of the advantages of using Ansible:
-		- Ansible is an open-source tool
-		- Shell scripts are simple and no need of any other software installed
-		- It only needs to run script one time and everything will be setup
-		- Ansible does not requires agents 
-		- Ansible has powerful features that can manage the network, operating systems and services. 
-		- No extra software on the server. 
-		- Ansible can be customized as what IT needs
+	
+- The main aim of ansible is to provide large productivity gains to a wide variety of automation challenges. This tool is extremely easy and simple to use and yet powerful enough to automate complex multi-tier IT application environments. Here are some of the advantages of using Ansible:
+	- Ansible is an open-source tool
+	- Shell scripts are simple and no need of any other software installed
+	- It only needs to run script one time and everything will be setup
+	- Ansible does not requires agents 
+	- Ansible has powerful features that can manage the network, operating systems and services. 
+	- No extra software on the server. 
+	- Ansible can be customized as what IT needs
 
 The playbook implements the following tasks:
-	- In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.
+- In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.
 		- Install docker.io
 		- Install python3-pip
 		- Install docker python module
@@ -116,9 +118,10 @@ We have installed the following Beats on these machines:
 	- metricbeat
 
 These Beats allow us to collect the following information from each machine:
-	- Filebeat - monitors log files and collects log events. is a lightweight shipper for forwarding and centralizing log data
+	
+- Filebeat - monitors log files and collects log events. is a lightweight shipper for forwarding and centralizing log data
 
-	- Metricbeat - is installed to different servers to monitor and analyze system CPU, memory and external services running on the system. It also monitors container performance metrics. 
+- Metricbeat - is installed to different servers to monitor and analyze system CPU, memory and external services running on the system. It also monitors container performance metrics. 
 
 ### Using the Playbook
 
