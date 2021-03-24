@@ -142,13 +142,6 @@ SSH into the control node and follow the steps below:
 - Which file do you update to make Ansible run the playbook on a specific machine? 
 	- **hosts**
 	
-	[webservers] 
-	10.0.0.5 ansible_python_interpreter=/usr/bin/python3 
-	10.0.0.6 ansible_python_interpreter=/usr/bin/python3 
-	10.0.0.7 ansible_python_interpreter=/usr/bin/python3
-	[elk]
-	10.1.0.4 ansible_python_interpreter=/usr/bin/python3 
-	
 - How do I specify which machine to install the ELK server on versus which to install Filebeat on?
 	- **hosts: webservers**
 	
