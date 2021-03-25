@@ -153,6 +153,7 @@ SSH into the control node and follow the steps below:
 - As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
 
 	- Here's the specific command to download the elk:
+
 	name: download and launch a docker elk container
       docker_container:
         name: elk
