@@ -149,16 +149,18 @@ SSH into the control node and follow the steps below:
 	
 - Which URL do you navigate to in order to check that the ELK server is running?
 	**http://168.62.53.233:5601/app/kibana#/home**
-
+	![](Images/MyKibanaPage.PNG)
+	
 - As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
 
-	- Here's the specific command to download the elk:
-
-	name: download and launch a docker elk container
-      docker_container:
-        name: elk
-        image: sebp/elk:761
-        state: started
-
-	- ansible-playbook install-elk.yml
-	
+	- ssh to the jump-box (ssh azadmin@PublicIPAddress)
+	- start docker container (sudo start docker <container-name>)
+	- attach to docker container (sudo docker attach <container-name>)
+	- cd /etc/ansible
+	- check and update hosts file (nano hosts)
+	- Make sure WebServers and elk are on the list (e.g. 10.0.0.5 ansible_python_interpreter=/usr/bin/python3).
+	- check ansible.cfg and make sure the line "remote_user = azadmin" is enabled
+	- run playbook
+		- ansible-playbook install-elk.yml
+		- ansible-playbook filebeat.yml
+		- ansible-playbook metricbeat.yml
