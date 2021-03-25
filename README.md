@@ -145,7 +145,7 @@ SSH into the control node and follow the steps below:
 - How do I specify which machine to install the ELK server on versus which to install Filebeat on?
 
 	- For Elk install (see install-elk.yml), you need to specify the hosts as ELK: [hosts: elk](/Ansible/install-elk.yml). 
-	- While for installing Filebeat, specify hosts as webservers: [hosts: webservers] (/Ansible/filebeat-playbook.yml). 
+	- While for installing Filebeat, specify hosts as webservers: [hosts: webservers](/Ansible/filebeat-playbook.yml). 
 	
 - Which URL do you navigate to in order to check that the ELK server is running?
 	**http://168.62.53.233:5601/app/kibana#/home**
