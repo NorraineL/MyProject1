@@ -69,10 +69,10 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses      |
 |----------|---------------------|---------------------------|
-| Jump Box | No                  | 13.64.187.206             |
-| Web-1    | Yes                 | 104.42.153.206            |
-| Web-2    | Yes                 | 104.42.153.206            |
-| Web-3    | Yes                 | 104.42.153.206            |
+| Jump Box | Yes                 | 13.64.187.206             |
+| Web-1    | No                  | 104.42.153.206            |
+| Web-2    | No                  | 104.42.153.206            |
+| Web-3    | No                  | 104.42.153.206            |
 | ELK      | Yes                 | 168.62.53.233:5601        |
 
 ### Elk Configuration
@@ -98,7 +98,7 @@ The playbook implements the following tasks:
 	- Increase virtual memory
 	- Download and launch a docker container
 
-### The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+- The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
 ![](Images/docker-ps.PNG)
 
